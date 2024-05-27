@@ -1785,7 +1785,8 @@ append_firmware() {
 
 			if [ ${#myfw_f[@]} -gt 1 ]
 			then
-				gen_die "excessive number of firmwares!"
+                print_warning 3 "$(get_indent 2) - excessive number of firmwares for ${myfw}: ${myfw_f[*]}"
+                continue
 			fi
 
 			if [ ${#myfw_f[@]} -lt 1 ]
